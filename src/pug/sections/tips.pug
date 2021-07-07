@@ -1,0 +1,12 @@
+- var list = [{title: 'How to create a living room to love', date: '20 jan 2020', img: 'tip-1.jpg'},{title: 'Solution for clean look working space', date: '10 jan 2020', img: 'tip-2.jpg'},{title: 'Make your cooking activity more fun with good setup', date: '20 jan 2020', img: 'tip-3.jpg'},{title: 'How to create a living room to love', date: '20 jan 2020', img: 'tip-1.jpg'},{title: 'Solution for clean look working space', date: '10 jan 2020', img: 'tip-2.jpg'},{title: 'Make your cooking activity more fun with good setup', date: '20 jan 2020', img: 'tip-3.jpg'},{title: 'How to create a living room to love', date: '20 jan 2020', img: 'tip-1.jpg'},{title: 'Solution for clean look working space', date: '10 jan 2020', img: 'tip-2.jpg'},{title: 'Make your cooking activity more fun with good setup', date: '20 jan 2020', img: 'tip-3.jpg'}]
+
+section.tips
+  .container
+    h2.title-h2.tips__title Tips & Tricks
+
+    .tips__list
+      each value in list
+        .tips__item
+          img(src="img/" + value.img, alt="").tips__item-img
+          h5.title-h5.tips__item-title= value.title
+          p.body-small.tips__item-date= value.date

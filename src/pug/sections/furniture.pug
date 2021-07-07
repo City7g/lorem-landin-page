@@ -1,0 +1,9 @@
+sections.furniture
+  .container
+    .body-xlarge.furniture__subtitle Share your setup with
+    h2.title-h2.furniture__title #LoremFurniture
+
+    .furniture__list
+      - for (var x = 0; x < 8; x++)
+        .furniture__item
+          img(src=`img/share-${x+1}.jpg`, alt="").furniture__item-img

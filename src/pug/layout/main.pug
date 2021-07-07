@@ -1,0 +1,25 @@
+block variables
+
+doctype html
+html(lang="ua")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    //- link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
+    title= title
+    link(rel="stylesheet" href="libs/slick/slick.css")
+    link(rel="stylesheet" href="main.min.css")
+  body
+    include ../components/header
+
+
+    block content
+
+
+    include ../components/footer
+
+    script(type='text/javascript' src='//code.jquery.com/jquery-1.11.0.min.js')
+    script(type='text/javascript' src='//code.jquery.com/jquery-migrate-1.2.1.min.js')
+    script(src="libs/slick/slick.min.js") 
+    script(src="main.min.js") 

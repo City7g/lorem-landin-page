@@ -1,0 +1,28 @@
+.feature {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (max-width: $--tablet) {
+      grid-template-columns: repeat(2, auto);
+    }
+
+    @media (max-width: $--mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 2px 20px;
+
+    &-img {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+  }
+}

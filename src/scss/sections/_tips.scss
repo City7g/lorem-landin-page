@@ -1,0 +1,110 @@
+.tips {
+  // &__list {
+  //   display: grid;
+  //   grid-template-columns: repeat(3, 1fr);
+  //   gap: 32px;
+  // }
+
+  &__list {
+    margin: 0 -16px;
+  }
+
+  &__item {
+    padding: 0 16px 16px;
+    margin: 0 16px;
+
+    transition: 0.3s all ease;
+
+    &:hover {
+      box-shadow: 0 10px 40px rgba(97, 97, 97, 0.1);
+    }
+
+    &-img {
+      margin: 0 -16px 16px;
+      width: calc(100% + 32px);
+      max-width: none;
+    }
+
+    &-title {
+      margin-bottom: 8px;
+    }
+  }
+
+  // Slider
+  & .slick-arrow {
+    position: absolute;
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+
+    background: #ffffff;
+    box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.16);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px 14px;
+    border-radius: 50%;
+    font-size: 0;
+
+    @media (max-width: $--mobile) {
+      width: 30px;
+    height: 30px;
+
+    background-size: 5px 10px;
+    }
+
+    &.slick-prev {
+      top: 50%;
+      left: 16px;
+      transform: translate(-50%, -50%);
+
+      background-image: url(img/arrow-prev.svg);
+    }
+
+    &.slick-next {
+      top: 50%;
+      right: 16px;
+      transform: translate(50%, -50%);
+
+      background-image: url(img/arrow-next.svg);
+    }
+  }
+
+  & .slick-dots {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+
+    & li button {
+      position: relative;
+      width: 11px;
+      height: 11px;
+
+      margin: 0 10px;
+
+      background-color: $--gray-5;
+      border-radius: 50%;
+      font-size: 0;
+    }
+
+    & .slick-active button {
+      background-color: $--primary;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 21px;
+        height: 21px;
+
+        border: 1px solid $--primary;
+        border-radius: 50%;
+        content: '';
+      }
+    }
+  }
+}

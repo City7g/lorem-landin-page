@@ -1,0 +1,39 @@
+.first {
+  min-height: 100vh;
+
+  background-image: url(img/first-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  & .container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-top: 200px;
+    padding-bottom: 60px;
+  }
+
+  &__main {
+    max-width: 494px;
+    padding: 60px;
+
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(31px);
+
+    @media (max-width: $--tablet) {
+      padding: 30px;
+    }
+
+    &-text {
+      margin-bottom: 48px;
+
+      @media (max-width: $--tablet) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

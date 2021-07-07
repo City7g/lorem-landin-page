@@ -1,0 +1,21 @@
+// Main
+@import 'main/_vars';
+@import 'main/_mixins';
+@import 'main/_fonts';
+@import 'main/_reset';
+@import 'main/_base';
+@import 'main/_container';
+
+
+// Components
+@import 'components/_btns';
+@import 'components/_input';
+@import 'components/_header';
+@import 'components/_footer';
+
+// Sections
+@import 'sections/_first';
+@import 'sections/_feature';
+@import 'sections/_products';
+@import 'sections/_tips.scss';
+@import 'sections/_furniture';

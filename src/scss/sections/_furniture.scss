@@ -1,0 +1,72 @@
+.furniture {
+  &__title {
+    margin-bottom: 43px;
+
+    text-align: center;
+
+    @media (max-width: $--tablet) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 8px;
+
+    color: $--gray-2;
+    text-align: center;
+
+    @media (max-width: $--tablet) {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 15fr 6fr 19fr 35fr 25fr;
+    grid-template-rows: 312px 80px 251px;
+    gap: 12px;
+
+    @media (max-width: $--tablet) {
+      grid-template-columns: 37fr 15fr 6fr 42fr;
+      grid-template-rows: none;
+    }
+
+    // @media (max-width: $--mobile) {
+    //   grid-template-columns: repeat(2, 1fr);
+    // }
+  }
+
+  &__item {
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      grid-row: span 2;
+    }
+
+    &:nth-child(2),
+    &:nth-child(5) {
+      grid-column: span 2;
+    }
+
+    @media (max-width: $--tablet) {
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(7) {
+        grid-column: span 3;
+      }
+
+      &:nth-child(5),
+      &:nth-child(6) {
+        grid-column: span 2;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+}

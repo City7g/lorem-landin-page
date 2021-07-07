@@ -1,0 +1,27 @@
+- var list = [{title: "Syltherine", description: "Stylish cafe chair", img: "product-1.jpg", price: "Rp 2.500.000", old: "Rp 3.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Syltherine", description: "Stylish cafe chair", img: "product-1.jpg", price: "Rp 2.500.000", old: "Rp 3.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"},{title: "Leviosa", description: "Stylish cafe chair", img: "product-2.jpg", price: "Rp 2.500.000"}]
+
+
+sections.products
+  .container
+    h2.title-h2.products__title Our Products
+
+    .products__list
+      each value in list
+        .products__item
+          img(src='img/' + value.img, alt=value.title).products__item-img
+          h5.title-h5.products__item-title= value.title
+          p.body-normal.products__item-description= value.description
+          p.body-xlarge.products__item-price= value.price
+          if value.old
+            span.products__item-old= value.old
+          
+          .products__item-wrap
+            a(href="#" data-text="Вы добавили товар").btn-main.btn-main--white.products__item-btn Add to cart
+            a(href="#" data-text="Поделиться товаром").button-normal.products__item-link
+              img(src="img/share-white-icon.svg", alt="")
+              span Share
+            a(href="#" data-text="Вы поставили лайк").button-normal.products__item-link
+              img(src="img/heart-white-icon.svg", alt="")
+              span Like
+    
+    button.btn-main.btn-main--border.products__btn Show More

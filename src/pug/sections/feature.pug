@@ -1,0 +1,10 @@
+- var list = [{title: "High Quality", description: "crafted from top materials", img: "trophy.svg"},{title: "Warrany Protection", description: "Over 2 years", img: "guarantee.svg"},{title: "Free Shipping",description: "Order over 150 $",img: "shipping.svg"},{title: "24 / 7 Support", description: "Dedicated support", img: "support.svg"}]
+
+sections.feature
+  .container
+    .feature__list
+      each value in list
+        .feature__item
+          img(src='img/' + value.img, alt=value.title).feature__item-img
+          .body-large.feature__item-title= value.title
+          .body-normal.feature__item-description= value.description
