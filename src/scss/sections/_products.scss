@@ -68,9 +68,20 @@
     }
 
     &-img {
-      margin: 0 -16px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       width: calc(100% + 32px);
-      max-width: none;
+      height: 300px;
+      margin: 0 -16px 16px;
+
+      background-color: #fff;
+
+      & img {
+        object-fit: contain;
+        max-height: 100%;
+      }
     }
 
     &-title {

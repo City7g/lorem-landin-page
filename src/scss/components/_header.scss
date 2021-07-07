@@ -34,13 +34,34 @@
   }
 
   &__list {
-    margin-right: 44px;
-
     display: flex;
     align-items: center;
 
+    margin-right: 44px;
+
     @media (max-width: $--tablet) {
-      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 250px;
+      margin-right: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+
+      background-color: $--primary;
+
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: 0.3s all ease;
+    }
+
+    &.active {
+      transform: scaleX(1);
     }
 
     &-item {
@@ -50,10 +71,23 @@
 
       color: $--gray-1;
 
+      @media (max-width: $--tablet) {
+        color: $--white;
+        font-size: 16px;
+        line-height: 19px;
+      }
+
       &--drop {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width: $--tablet) {
+          flex-direction: column;
+          align-items: flex-start;
+
+          text-align: right;
+        }
 
         &::after {
           display: block;
@@ -69,6 +103,10 @@
           background-position: center;
           content: '';
           transition: 0.3s all ease;
+
+          @media (max-width: $--tablet) {
+            display: none;
+          }
         }
 
         &:hover::after {
@@ -91,6 +129,25 @@
       display: none;
 
       opacity: 0;
+
+      @media (max-width: $--tablet) {
+        position: static;
+
+        display: block;
+
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: $--tablet) {
+      & span,
+      & li {
+        margin-bottom: 8px;
+      }
+
+      & li li {
+        padding-right: 10px;
+      }
     }
   }
 
@@ -101,5 +158,72 @@
   &__heart,
   &__cart {
     margin-right: 35px;
+
+    @media (max-width: $--mobile) {
+      margin-right: 25px;
+    }
+  }
+
+  &__burger {
+    display: none;
+    position: relative;
+    width: 25px;
+    height: 25px;
+
+    margin-left: 25px;
+
+    background-color: transparent;
+    cursor: pointer;
+
+    @media (max-width: $--tablet) {
+      display: block;
+    }
+
+    & span {
+      display: block;
+
+      width: 20px;
+      height: 1px;
+
+      background-color: $--black;
+      transition: 0.3s all ease;
+
+      &:nth-child(1) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, calc(-50% - 4px));
+      }
+
+      &:nth-child(2) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:nth-child(3) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, calc(-50% + 4px));
+      }
+    }
+
+    &.active span {
+      background-color: $--white;
+
+      &:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
   }
 }
