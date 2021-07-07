@@ -7,6 +7,10 @@
 
   transition: 0.3s all ease;
 
+  @media (max-width: $--tablet) {
+    top: 20px;
+  }
+
   &--white {
     top: 0;
 
